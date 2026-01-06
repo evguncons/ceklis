@@ -77,49 +77,51 @@
 
         /* Sağ Taraf - Kazananlar Listesi */
         .sidebar {
-            width: 350px;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(15px);
-            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            width: 400px; /* Genişletildi */
+            background: rgba(0, 0, 0, 0.75); /* Biraz daha koyu yapıldı okunaklılık için */
+            backdrop-filter: blur(20px);
+            border-left: 3px solid rgba(255, 20, 147, 0.3); /* Kenarlık belirginleştirildi */
             display: flex;
             flex-direction: column;
-            padding: 20px;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            padding: 25px;
+            box-shadow: -15px 0 40px rgba(0,0,0,0.6);
             z-index: 40;
             transition: all 0.3s ease;
         }
 
         .sidebar-title {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
+            font-size: 3rem; /* Büyütüldü */
             color: #fff;
             text-align: center;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--hot-pink);
-            padding-bottom: 10px;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px var(--hot-pink);
+            margin-bottom: 25px;
+            border-bottom: 4px solid var(--hot-pink); /* Kalınlaştırıldı */
+            padding-bottom: 15px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--hot-pink);
         }
 
         .winners-scroll-area {
             flex: 1;
             overflow-y: auto;
-            padding-right: 5px;
+            padding-right: 10px;
         }
 
         .winner-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--hot-pink);
+            background: rgba(255, 255, 255, 0.12); /* Biraz daha aydınlık */
+            border-radius: 15px; /* Köşeler yuvarlatıldı */
+            padding: 20px; /* İç boşluk arttırıldı */
+            margin-bottom: 20px; /* Kart arası boşluk arttırıldı */
+            border-left: 6px solid var(--hot-pink); /* Sol çizgi kalınlaştırıldı */
             animation: slideIn 0.5s ease-out;
             transition: transform 0.2s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
         .winner-card:hover {
-            transform: scale(1.02);
-            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.03);
+            background: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.2);
         }
 
         @keyframes slideIn {
@@ -128,28 +130,34 @@
         }
 
         .wc-name {
-            font-weight: 800;
-            font-size: 1.1rem;
+            font-weight: 900; /* Daha kalın */
+            font-size: 1.4rem; /* İsim büyütüldü */
             color: white;
             display: block;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         
         .wc-prize {
             color: #ffd700;
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-weight: 700;
+            font-size: 1.1rem; /* Ödül büyütüldü */
             text-transform: uppercase;
-            margin-top: 5px;
+            margin-top: 8px;
             display: block;
+            letter-spacing: 0.5px;
         }
 
         .wc-number {
             font-family: monospace;
-            color: #aaa;
-            font-size: 0.9rem;
-            margin-top: 5px;
+            color: #ccc;
+            font-size: 1rem; /* Numara büyütüldü */
+            margin-top: 8px;
             display: block;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            background: rgba(0,0,0,0.3);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
         }
 
         /* Başlıklar - Responsive Fontlar */
@@ -575,7 +583,7 @@
 
     <script>
         // --- GERÇEK VERİLER (Excelden Alınan) ---
-       let initialData = [
+     let initialData = [
   { "name": "Ahmet MELLA", "tickets": 100 },
   { "name": "ALEYNA KARA", "tickets": 50 },
   { "name": "ALEYNA NUR EMİR", "tickets": 326 },
