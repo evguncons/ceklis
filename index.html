@@ -428,21 +428,20 @@
 
         .next-prize-badge {
             position: absolute;
-            top: 3vh;
+            top: 20px; /* Üst kısımdan 20px aşağıda */
             left: 50%;
             transform: translateX(-50%);
             background: #ffd700;
             color: black;
-            padding: 2vh 4vw; /* Padding büyütüldü */
+            padding: 2vh 4vw;
             border-radius: 50px;
             font-weight: 900;
-            /* Ödül başlık boyutu BÜYÜTÜLDÜ: Min 2rem, Max 3.5rem */
-            font-size: clamp(2rem, 4vw, 3.5rem); 
+            font-size: clamp(2rem, 4vw, 3.5rem);
             box-shadow: 0 15px 40px rgba(0,0,0,0.6);
             display: none;
             z-index: 50;
             white-space: nowrap;
-            border: 6px solid #fff; /* Çerçeve kalınlaştırıldı */
+            border: 6px solid #fff;
             width: auto;
             max-width: 90%;
             text-align: center;
@@ -468,7 +467,7 @@
 
             .draw-area {
                 min-height: 80vh; 
-                padding-top: 100px; /* Badge için daha fazla yer */
+                padding-top: 150px; /* Badge için daha fazla yer, başlık ile çakışmayı önler */
                 padding-bottom: 60px; 
                 order: 1;
             }
@@ -590,7 +589,7 @@
 
     <script>
         // --- GERÇEK VERİLER (Excelden Alınan) ---
-     let initialData = [
+       let initialData = [
   { "name": "Ahmet MELLA", "tickets": 100 },
   { "name": "ALEYNA KARA", "tickets": 50 },
   { "name": "ALEYNA NUR EMİR", "tickets": 326 },
