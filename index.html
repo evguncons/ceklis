@@ -795,7 +795,7 @@
   { "name": "SÜMEYRA KARS", "tickets": 50 },
   { "name": "Sümeyye GÜLDAR", "tickets": 100 },
   { "name": "SÜMEYYE MİNAS", "tickets": 199 },
-  { "name": "AYŞE ÇALIŞIR", "tickets": 71 },
+  { "name": "TEFAL AYŞE ÇALIŞIR", "tickets": 71 },
   { "name": "Tuncay TUNÇER", "tickets": 100 },
   { "name": "TURGUT KIRATLI ", "tickets": 271 },
   { "name": "TURGUT ÇİFTER ", "tickets": 71 },
@@ -845,7 +845,6 @@
   { "name": "Şeymanur AYDIN", "tickets": 100 },
   { "name": "ŞULE ULKAR ", "tickets": 194 }
 ];
-
 
         let participants = [...initialData];
         let manualNextPrize = null; 
@@ -965,7 +964,8 @@
             const luckyNumber = generateUniqueNumber();
             const prize = getPrize();
 
-            const animationDuration = 4000; 
+            // Bekleme süresi 2.5 saniyeye düşürüldü
+            const animationDuration = 2500; 
             
             const interval = setInterval(() => {
                 const tempNum = Math.floor(Math.random() * 99999).toString().padStart(5, '0');
@@ -985,12 +985,17 @@
         async function revealWinner(winner, luckyNumber, prize) {
             const targetNum = luckyNumber.toString(); 
 
+            // Her rakam arasında kademeli bekleme ekleyerek heyecanı arttırıyoruz
+            const delays = [300, 600, 900, 1200, 1500]; // Giderek artan bekleme süreleri
+
             for(let i = 0; i < 5; i++) {
+                await new Promise(r => setTimeout(r, delays[i])); // Kademeli bekleme
                 digitBoxes[i].classList.remove('rolling');
                 digitBoxes[i].innerText = targetNum[i];
                 digitBoxes[i].classList.add('active');
-                await new Promise(r => setTimeout(r, 200)); 
             }
+
+            await new Promise(r => setTimeout(r, 500)); // Son rakamdan sonra azıcık daha bekle
 
             fireConfetti();
 
